@@ -6,14 +6,26 @@
 //
 
 import UIKit
+import netfox
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var window: UIWindow?
+    var navigationController: UINavigationController?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        #if DEBUG
+        NFX.sharedInstance().start()
+        #endif
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let root = ScreenConfigurator.shared.createHomeScreen()
+        navigationController = UINavigationController(rootViewController: root)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+
         return true
     }
 
