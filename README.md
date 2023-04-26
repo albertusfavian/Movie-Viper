@@ -5,4 +5,3 @@ Feature:
   - Using Kingfisher to get Image
   - Using Moya 
   - Clean Architecture
-  - 
