@@ -21,6 +21,7 @@ protocol MovieWorkerProtocol{
     func getMovieListDiscover()
     func getMovieByGenre(genreId: String)
     func getReviews(movieId: String)
+    func getVideo(movieId: String)
 }
 
 protocol MovieGenreProtocol: AnyObject {
@@ -31,6 +32,8 @@ protocol MovieGenreProtocol: AnyObject {
 protocol MovieDetailProtocol: AnyObject{
     func didSuccessGetReview(response: Reviews)
     func didFailedGetReview(error: String)
+    func didSuccessGetVideo(response: Videos)
+    func didFailedGetVideo(error: String)
 }
 
 protocol MovieListDiscover: AnyObject{
@@ -70,7 +73,7 @@ public class MovieWorker: MovieWorkerProtocol{
             case .success(let result):
                 do {
                     let genres = try JSONDecoder().decode(Genres.self, from: result.data)
-                    self.genreDelegate?.didSuccessGetGenres(response: genres.genres ?? [])
+                    self.genreDelegate?.didSuccessGetGenres(response: genres.genres ?? [] )
                 } catch {
                     self.genreDelegate?.didFailedGetGenres(error: error.localizedDescription)
                 }
@@ -93,6 +96,22 @@ public class MovieWorker: MovieWorkerProtocol{
                 }
             case .failure(let error):
                 self.movieListDiscover?.didFailedGetMovieListDiscover(error: error.localizedDescription)
+            }
+        }
+    }
+    
+    public func getVideo(movieId: String) {
+        provider.request(.getVideo(movieId: movieId)) { result in
+            switch result {
+            case .success(let result):
+                do {
+                    let videos = try JSONDecoder().decode(Videos.self, from: result.data)
+                    self.movieDelegate?.didSuccessGetVideo(response: videos)
+                } catch let error {
+                    self.movieDelegate?.didFailedGetVideo(error: error.localizedDescription)
+                }
+            case .failure(let error):
+                self.movieDelegate?.didFailedGetVideo(error: error.localizedDescription)
             }
         }
     }

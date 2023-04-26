@@ -19,11 +19,23 @@ class DetailInteractor: DetailPresenterToInteractor{
     func getReviews(movieId: String) {
         worker?.getReviews(movieId: movieId)
     }
+    
+    func getVideo(movieId: String){
+        worker?.getVideo(movieId: movieId)
+    }
 }
 
 extension DetailInteractor: MovieDetailProtocol{
+    func didSuccessGetVideo(response: Videos) {
+        presenter?.didSuccessGetVideo(videos: response)
+    }
+    
+    func didFailedGetVideo(error: String) {
+        presenter?.didFailedGetVideo(response: "")
+    }
+    
     func didSuccessGetReview(response: Reviews) {
-        presenter?.didSuccessGetReview(reviews: response.results ?? [])
+        presenter?.didSuccessGetReview(reviews: response.results )
     }
     
     func didFailedGetReview(error: String) {

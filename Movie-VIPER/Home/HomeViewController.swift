@@ -66,6 +66,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: GenreItemTableViewCell.self), for: indexPath) as! GenreItemTableViewCell
         
+        
+        
         cell.genreItem.text = presenter?.listOfGenre[indexPath.row].name
         
         return cell
