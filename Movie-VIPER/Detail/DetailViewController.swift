@@ -7,8 +7,10 @@
 
 import UIKit
 import Kingfisher
+import youtube_ios_player_helper
+import SVProgressHUD
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController{
 
     @IBOutlet weak var movieTableReview: UITableView!
     @IBOutlet weak var movieOverview: UILabel!
@@ -19,6 +21,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var movieRating: UILabel!
+    @IBOutlet weak var ytPlayer: YTPlayerView!
     
     var presenter: DetailViewToPresenter?
     
@@ -40,25 +43,41 @@ class DetailViewController: UIViewController {
         if let movie = presenter?.movie {
             movieOverview.text = movie.overview
             movie.adult == true ? (movieAdultBool.text = "True") : (movieAdultBool.text = "False")
-            movieDate.text = convertStringToDate(inputDate: movie.releaseDate)
+            movieDate.text = convertStringToDate(inputDate: movie.releaseDate ?? "")
             movieName.text = movie.title
             movieRating.text = "\(movie.voteAverage)/10"
             movieLanguage.text = movie.originalLanguage
             movieVoteCount.text = String(movie.voteCount)
             let url = (URL(string: "\(Constant.baseImgURL)\(movie.posterPath)"))
             imageView.kf.setImage(with: url)
+            ytPlayer.delegate = self
         }
         
         registerTable()
     }
 
+    func showLoading(){
+        SVProgressHUD.show()
+    }
+    
+    func hideLoading(){
+        SVProgressHUD.dismiss()
+    }
 }
 
 extension DetailViewController: DetailPresenterToView{
+    
     func updateTable() {
         DispatchQueue.main.async {
             self.movieTableReview.reloadData()
         }
+    }
+    
+    func updateVideo(video: Videos){
+        DispatchQueue.main.async {
+            self.ytPlayer.load(withVideoId: video.results[0].key ?? "fVW8-px4Ufw")
+        }
+        
     }
 }
 
@@ -75,6 +94,14 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource{
         
         return cell
     }
+}
+
+extension DetailViewController: YTPlayerViewDelegate{
+    func playerView(_ playerView: YTPlayerView, receivedError error: YTPlayerError) {
+        self.hideLoading()
+    }
     
-    
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        self.hideLoading()
+    }
 }

@@ -9,5 +9,8 @@ target 'Movie-VIPER' do
   pod 'Moya'
   pod 'netfox'
   pod 'Kingfisher', '~> 7.0'
+  pod "youtube-ios-player-helper"
+  pod 'SVProgressHUD'
+  pod 'RxSwift'
 
 end

@@ -6,11 +6,17 @@ PODS:
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - netfox (1.21.0)
+  - RxSwift (6.5.0)
+  - SVProgressHUD (2.2.5)
+  - youtube-ios-player-helper (1.0.4)
 
 DEPENDENCIES:
   - Kingfisher (~> 7.0)
   - Moya
   - netfox
+  - RxSwift
+  - SVProgressHUD
+  - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
@@ -18,13 +24,19 @@ SPEC REPOS:
     - Kingfisher
     - Moya
     - netfox
+    - RxSwift
+    - SVProgressHUD
+    - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   netfox: 9d5cc727fe7576c4c7688a2504618a156b7d44b7
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: 3ea209a6750eaf3d837b6247044f10cddd56b0bf
+PODFILE CHECKSUM: 0cab83564b9760e8e72297ee684b07000ea55ef5
 
 COCOAPODS: 1.12.0

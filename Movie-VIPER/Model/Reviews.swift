@@ -3,10 +3,14 @@
 //  Movie-VIPER
 //
 //  Created by Albert Mandiri on 21/04/23.
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
 //
+//   let reviews = try? JSONDecoder().decode(Reviews.self, from: jsonData)
 
 import Foundation
 
+// MARK: - Reviews
 public struct Reviews: Codable {
     public let id, page: Int
     public let results: [Review]
@@ -57,8 +61,9 @@ public struct Review: Codable {
 
 // MARK: - AuthorDetails
 public struct AuthorDetails: Codable {
-    public let name, username, avatarPath: String
-    public let rating: Int
+    public let name, username: String
+    public let avatarPath: String?
+    public let rating: Int?
 
     enum CodingKeys: String, CodingKey {
         case name, username
@@ -66,7 +71,7 @@ public struct AuthorDetails: Codable {
         case rating
     }
 
-    public init(name: String, username: String, avatarPath: String, rating: Int) {
+    public init(name: String, username: String, avatarPath: String?, rating: Int?) {
         self.name = name
         self.username = username
         self.avatarPath = avatarPath

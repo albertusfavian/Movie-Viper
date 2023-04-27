@@ -13,6 +13,8 @@ enum MovieServices{
     case getMoviesByGenre(genreId: String)
     case getAllDiscover
     case getReviews(movieId: String)
+    case getVideo(movieId: String)
+    
 }
 
 extension MovieServices: TargetType{
@@ -30,6 +32,8 @@ extension MovieServices: TargetType{
             return "discover/movie"
         case .getGenre:
             return "genre/movie/list"
+        case .getVideo(let movieId):
+            return "movie/\(movieId)/videos"
         case .getReviews(let movieId):
             return "movie/\(movieId)/reviews"
         }
