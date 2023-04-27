@@ -43,7 +43,7 @@ class DetailViewController: UIViewController{
         if let movie = presenter?.movie {
             movieOverview.text = movie.overview
             movie.adult == true ? (movieAdultBool.text = "True") : (movieAdultBool.text = "False")
-            movieDate.text = convertStringToDate(inputDate: movie.releaseDate)
+            movieDate.text = convertStringToDate(inputDate: movie.releaseDate ?? "")
             movieName.text = movie.title
             movieRating.text = "\(movie.voteAverage)/10"
             movieLanguage.text = movie.originalLanguage
@@ -75,7 +75,7 @@ extension DetailViewController: DetailPresenterToView{
     
     func updateVideo(video: Videos){
         DispatchQueue.main.async {
-            self.ytPlayer.load(withVideoId: video.results[0].key)
+            self.ytPlayer.load(withVideoId: video.results[0].key ?? "fVW8-px4Ufw")
         }
         
     }

@@ -22,7 +22,8 @@ public struct Videos: Codable {
 public struct Video: Codable {
     public let iso639_1: ISO639_1
     public let iso3166_1: ISO3166_1
-    public let name, key: String
+    public let name: String
+    public let key: String? 
     public let site: Site
     public let size: Int
     public let official: Bool
