@@ -15,13 +15,15 @@ public protocol Network {
 
 protocol MovieWorkerProtocol{
     var genreDelegate: MovieGenreProtocol? {get set}
+    var genreTabDelegate: MovieGenreProtocol? {get set}
     var movieListDiscover: MovieListDiscover? {get set}
     var movieDelegate: MovieDetailProtocol? {get set}
     func getGenre()
-    func getMovieListDiscover()
+    func getGenreTabSection()
     func getMovieByGenre(genreId: String)
     func getReviews(movieId: String)
     func getVideo(movieId: String)
+    func getMovieListDiscover()
 }
 
 protocol MovieGenreProtocol: AnyObject {
@@ -48,6 +50,7 @@ public class MovieWorker: MovieWorkerProtocol{
     let provider = MoyaProvider<MovieServices>()
     
     var genreDelegate: MovieGenreProtocol?
+    var genreTabDelegate: MovieGenreProtocol?
     var movieListDiscover: MovieListDiscover?
     var movieDelegate: MovieDetailProtocol?
     
@@ -79,6 +82,24 @@ public class MovieWorker: MovieWorkerProtocol{
                 }
             case .failure(let error):
                 self.genreDelegate?.didFailedGetGenres(error: error.localizedDescription)
+                
+            }
+            
+        }
+    }
+    
+    public func getGenreTabSection(){
+        provider.request(.getGenre) { result in
+            switch result {
+            case .success(let result):
+                do {
+                    let genres = try JSONDecoder().decode(Genres.self, from: result.data)
+                    self.genreTabDelegate?.didSuccessGetGenres(response: genres.genres ?? [] )
+                } catch {
+                    self.genreTabDelegate?.didFailedGetGenres(error: error.localizedDescription)
+                }
+            case .failure(let error):
+                self.genreTabDelegate?.didFailedGetGenres(error: error.localizedDescription)
             }
             
         }

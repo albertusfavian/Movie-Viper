@@ -144,8 +144,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
             endingLineNumber = "82"
-            landmarkName = "HomeViewController"
-            landmarkType = "21">
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,8 +160,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
             endingLineNumber = "86"
-            landmarkName = "HomeViewController"
-            landmarkType = "21">
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,38 +192,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "getMovieListDiscover()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "42E0D626-BFD5-4635-B900-780A98B8C410"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movie-VIPER/Utils/MovieWorker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "getMovieListDiscover()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "91250B77-1BA4-4FDE-B001-64A60599B78B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movie-VIPER/Utils/MovieWorker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
             landmarkName = "getMovieListDiscover()"
             landmarkType = "7">
          </BreakpointContent>
@@ -686,8 +654,8 @@
             filePath = "Movie-VIPER/Utils/MovieWorker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "getReviews(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -718,8 +686,8 @@
             filePath = "Movie-VIPER/Utils/MovieWorker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "getReviews(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -734,8 +702,8 @@
             filePath = "Movie-VIPER/Utils/MovieWorker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "getReviews(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -750,8 +718,8 @@
             filePath = "Movie-VIPER/Utils/MovieWorker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "getReviews(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -830,8 +798,8 @@
             filePath = "Movie-VIPER/Utils/MovieWorker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "getVideo(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -846,8 +814,8 @@
             filePath = "Movie-VIPER/Utils/MovieWorker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "getVideo(movieId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -919,22 +887,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "44D83D01-D922-4C34-B913-E0CBEB15887C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Movie-VIPER/Utils/MovieWorker.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "getGenre()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B4110644-B149-4B10-B74F-84EB3E679E0A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -942,8 +894,8 @@
             filePath = "Movie-VIPER/Utils/MovieWorker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "getGenre()"
             landmarkType = "7">
          </BreakpointContent>
@@ -990,8 +942,8 @@
             filePath = "Movie-VIPER/Utils/MovieWorker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "getMovieByGenre(genreId:)"
             landmarkType = "7">
          </BreakpointContent>

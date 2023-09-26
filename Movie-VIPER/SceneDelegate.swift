@@ -19,9 +19,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
 //        let genresViewController = GenresView(nibName: String(describing: GenresView.self), bundle: nil)
-        let root = ScreenConfigurator.shared.createHomeScreen()
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UINavigationController(rootViewController: root)
+        
+        let tabBar = UITabBarController()
+        
+        let homeScreen = ScreenConfigurator.shared.createHomeScreen()
+        let additionalScreen = ScreenConfigurator.shared.createAdditionalScreen()
+        
+        let firstVC = UINavigationController(rootViewController: homeScreen)
+        let secondVC = UINavigationController(rootViewController: additionalScreen)
+        
+        firstVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"),selectedImage: UIImage(systemName: "house.fill"))
+        secondVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"),selectedImage: UIImage(systemName: "person.fill"))
+
+        tabBar.viewControllers = [firstVC, secondVC]
+
+        window.rootViewController = tabBar
+        
+//
+//
+//        window.rootViewController = UINavigationController(rootViewController: tabBar)
         self.window = window
         window.makeKeyAndVisible()
     }
