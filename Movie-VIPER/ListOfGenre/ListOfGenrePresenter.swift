@@ -13,14 +13,17 @@ class ListOfGenrePresenter: ListOfGenreViewToPresenter {
     var interactor: ListOfGenrePresenterToInteractor?
     var router: ListOfGenrePresenterToRouter?
     var listOfGenre: [Genre] = []
+    var delegateToAdditionalScreen: PassBackData?
     
     func viewDidLoad() {
         interactor?.getGenre()
     }
     
     func didSelectGenreAt(genreLabel: String) {
-        router?.navigateBack(from: self.view!, selectedGenreName: genreLabel)
-        
+        if let delegate = delegateToAdditionalScreen{
+            delegate.updateLabel(genreLabel: genreLabel)
+            router?.navigateBack(from: self.view!)
+        }
         
     }
 }

@@ -13,7 +13,7 @@ class AdditionalPresenter: AdditionalViewToPresenter, AdditionalInteractorToPres
     var router: AdditionalPresenterToRouter?
     
     func didButtonTapped() {
-        router?.navigateToListOfGenreScreen(from: self.view!, onDismiss: handleOnDismiss(selectedGenre:))
+        router?.navigateToListOfGenreScreen(from: self.view!)
     }
     
     

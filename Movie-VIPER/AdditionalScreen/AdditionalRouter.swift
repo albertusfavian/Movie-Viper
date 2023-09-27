@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 class AdditionalRouter: AdditionalPresenterToRouter{
-    func navigateToListOfGenreScreen(from view: AdditionalPresenterToView, onDismiss: ((String?) -> Void)?) {
+    func navigateToListOfGenreScreen(from view: AdditionalPresenterToView) {
         guard let view = view as? UIViewController else { return }
-        let genres = ScreenConfigurator.shared.createListOfGenreScreen(onDismiss)
+        let genres = ScreenConfigurator.shared.createListOfGenreScreen(viewAdditionalScreen: view)
         
         view.navigationController?.pushViewController(genres, animated: true)
     }

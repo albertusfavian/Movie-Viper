@@ -29,5 +29,5 @@ protocol AdditionalInteractorToPresenter: AnyObject{
 }
 
 protocol AdditionalPresenterToRouter: AnyObject{
-    func navigateToListOfGenreScreen(from: AdditionalPresenterToView, onDismiss: ((_ selectedGenre: String?) -> Void)?)
+    func navigateToListOfGenreScreen(from: AdditionalPresenterToView)
 }

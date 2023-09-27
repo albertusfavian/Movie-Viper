@@ -12,12 +12,9 @@ class ListOfGenreRouter: ListOfGenrePresenterToRouter {
     
     var onDismissWithData: ((_ selectedGenre: String?) -> Void)?
     
-    func navigateBack(from view: ListOfGenrePresenterToView, selectedGenreName: String) {
+    func navigateBack(from view: ListOfGenrePresenterToView) {
         if let vc = view as? UIViewController? {
             vc?.navigationController?.popViewController(animated: true)
-            if let onDismiss = onDismissWithData {
-                onDismiss(selectedGenreName)
-            }
         }
     }
     

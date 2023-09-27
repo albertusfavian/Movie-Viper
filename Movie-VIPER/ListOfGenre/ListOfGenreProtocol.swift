@@ -11,6 +11,7 @@ protocol ListOfGenreViewToPresenter: AnyObject {
     var view: ListOfGenrePresenterToView? { get set }
     var interactor: ListOfGenrePresenterToInteractor? { get set }
     var router: ListOfGenrePresenterToRouter? { get set }
+    var delegateToAdditionalScreen: PassBackData? { get set }
     func didSelectGenreAt(genreLabel: String)
     func viewDidLoad()
     var listOfGenre: [Genre] { get set }
@@ -35,6 +36,5 @@ protocol ListOfGenreInteractorToPresenter: AnyObject {
 protocol ListOfGenrePresenterToRouter: AnyObject {
     var onDismissWithData: ((_ selectedGenre: String?) -> Void)? { get set }
     
-    func navigateBack(from view: ListOfGenrePresenterToView,
-                      selectedGenreName: String)
+    func navigateBack(from view: ListOfGenrePresenterToView)
 }

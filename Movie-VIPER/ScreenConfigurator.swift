@@ -57,18 +57,21 @@ class ScreenConfigurator{
         return view
     }
     
-    func createListOfGenreScreen(_ onDismiss: ((_ selectedGenreName: String?) -> Void)?) -> UIViewController {
+    func createListOfGenreScreen(viewAdditionalScreen: Any) -> UIViewController {
         let view: UIViewController & ListOfGenrePresenterToView = ListOfGenreView()
         let presenter: ListOfGenreViewToPresenter & ListOfGenreInteractorToPresenter = ListOfGenrePresenter()
         let interactor: ListOfGenrePresenterToInteractor = ListOfGenreInteractor()
-        let router: ListOfGenrePresenterToRouter = ListOfGenreRouter() 
+        let router: ListOfGenrePresenterToRouter = ListOfGenreRouter()
+        
+//        AdditionScreen
+        let delegate: PassBackData & AdditionalPresenterToView = viewAdditionalScreen as! AdditionalPresenterToView & PassBackData
         
         view.presenter = presenter
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
+        presenter.delegateToAdditionalScreen = delegate
         interactor.presenter = presenter
-        router.onDismissWithData = onDismiss
         
         return view
     }

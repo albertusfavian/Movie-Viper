@@ -17,7 +17,7 @@ class AdditionalScreenView: UIViewController, AdditionalPresenterToView {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("ini onDismiss")
+        print("ini ProtocolDelegate")
 
         // Do any additional setup after loading the view.
     }
@@ -34,7 +34,7 @@ class AdditionalScreenView: UIViewController, AdditionalPresenterToView {
 
 extension AdditionalScreenView: PassBackData {
     func updateLabel(genreLabel: String) {
-        presenter?.updateLabel(with: genreLabel)
+        self.genreLabel.text = genreLabel
         
     }
 }
